@@ -1,0 +1,56 @@
+{
+  "products": [
+    {
+      "title": "khalilah",
+      "year": "2015",
+      "price": "28.500.500",
+      "image": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB13687-1-2000x1333.jpg",
+      "speed": "26",
+      "imageDetail": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB13923-24-2000x1334.jpg",
+      "detailLength": "48.50",
+      "detailGuest": "5",
+      "latest": "yes",
+      "imageLatest": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB14471-5.jpg",
+      "id": 1
+    },
+    {
+      "title": "khalilah",
+      "year": "2015",
+      "price": "28.500.500",
+      "image": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB13687-1-2000x1333.jpg",
+      "speed": "26",
+      "imageDetail": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB13923-24-2000x1334.jpg",
+      "detailLength": "48.50",
+      "detailGuest": "5",
+      "latest": "yes",
+      "imageLatest": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB14471-5.jpg",
+      "id": 2
+    },
+    {
+      "title": "khalilah",
+      "year": "2015",
+      "price": "28.500.500",
+      "image": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB13687-1-2000x1333.jpg",
+      "speed": "26",
+      "imageDetail": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB13923-24-2000x1334.jpg",
+      "detailLength": "48.50",
+      "detailGuest": "5",
+      "latest": "yes",
+      "imageLatest": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB14471-5.jpg",
+      "id": 3
+    },
+    {
+      "title": "khalilahrtyrtydfgdf",
+      "year": "2015gdfgdfg",
+      "price": "28.500.500dfgdfgdfg",
+      "image": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB13687-1-2000x1333.jpg",
+      "speed": "26",
+      "imageDetail": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB13923-24-2000x1334.jpg",
+      "detailLength": "48.50",
+      "detailGuest": "5dfgdfg",
+      "latest": "yes",
+      "imageLatest": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB14471-5.jpg",
+      "id": 4
+    }
+  ]
+}
