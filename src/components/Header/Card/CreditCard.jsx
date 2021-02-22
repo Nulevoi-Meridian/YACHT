@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Cards from 'react-credit-cards';
-import 'react-credit-cards/es/styles-compiled.css';
+import '../../../pages/ShoppingCart/CreditCard/node_modules/react-credit-cards/es/styles-compiled.css';
 import './Payment.css';
 
 
@@ -21,12 +21,8 @@ export default class PaymentForm extends React.Component {
     handleInputChange = (e) => {
         const { name, value } = e.target;
 
-        // console.log(this.props)
         this.setState({ [name]: value });
     }
-
-    //
-
 
     render(props) {
         return (
