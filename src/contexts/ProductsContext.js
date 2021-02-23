@@ -9,7 +9,7 @@ const INIT_STATE = {
     editModalFormStatus: false,
     editProduct: null,
     productDetails: [],
-    cartProducts: []
+    cartProducts: null
 }
 
 const reducer = (state = INIT_STATE, action) => {
