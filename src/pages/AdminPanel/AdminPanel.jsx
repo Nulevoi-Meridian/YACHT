@@ -21,10 +21,9 @@ const AdminPanel = () => {
         image: '',
         speed: '',
         imageDetail: '',
+        imageDetailExtra: '',
         detailLength: '',
-        detailGuest: '',
-        latest: '',
-        imageLatest: ''
+        detailGuest: ''
     });
 
     useEffect(() => {
@@ -48,10 +47,9 @@ const AdminPanel = () => {
             image: '',
             speed: '',
             imageDetail: '',
+            imageDetailExtra: '',
             detailLength: '',
-            detailGuest: '',
-            latest: '',
-            imageLatest: ''
+            detailGuest: ''
         });
     }
 
@@ -81,16 +79,16 @@ const AdminPanel = () => {
                                 name="price"
                                 onChange={getInpValue}
                             />
-                            <input type="text" className="item-img"
-                                value={item.image}
-                                placeholder="Изображение"
-                                name="image"
-                                onChange={getInpValue}
-                            />
                             <input type="text" className="admin-speed"
                                 value={item.speed}
                                 placeholder="Скорость"
                                 name="speed"
+                                onChange={getInpValue}
+                            />
+                            <input type="text" className="item-img"
+                                value={item.image}
+                                placeholder="Изображение"
+                                name="image"
                                 onChange={getInpValue}
                             />
 
@@ -103,6 +101,12 @@ const AdminPanel = () => {
                                     name="imageDetail"
                                     onChange={getInpValue}
                                 />
+                                <input type="text" className="img-detail-extra"
+                                    value={item.imageDetailExtra}
+                                    placeholder="Дополнительное изображение"
+                                    name="imageDetailExtra"
+                                    onChange={getInpValue}
+                                />
                                 <input type="text" className="admin-detail-length"
                                     value={item.detailLength}
                                     placeholder="Длина яхты"
@@ -113,23 +117,6 @@ const AdminPanel = () => {
                                     value={item.detailGuest}
                                     placeholder="Кол-во гостевых кабин"
                                     name="detailGuest"
-                                    onChange={getInpValue}
-                                />
-                            </div>
-                            <div className="select-inputs">
-                                <span>новинка?</span>
-                                <select className="new-item"
-                                    name="latest"
-                                    value={item.latest}
-                                    onChange={getInpValue}
-                                >
-                                    <option>---</option>
-                                    <option value="yes">Да</option>
-                                </select>
-                                <input type="text" className="img-latest"
-                                    value={item.imageLatest}
-                                    placeholder="Изображение для новинок"
-                                    name="imageLatest"
                                     onChange={getInpValue}
                                 />
                             </div>
