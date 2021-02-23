@@ -8,6 +8,8 @@ const INIT_STATE = {
     products: [],
     editModalFormStatus: false,
     editProduct: null,
+    productDetails: [],
+    cartProducts: []
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -28,10 +30,14 @@ const reducer = (state = INIT_STATE, action) => {
             ...state,
             editProduct: action.payload
         }       
-        case "EDIT_PRODUCT": return {
+        case "GET_PRODUCT_DETAILS": return {
             ...state,
-            editProduct: action.payload
-        } 
+            productDetails: action.payload
+        }
+        case "GET_PRODUCT__FOR__CART": return {
+            ...state,
+            cartProducts: action.payload
+        }
         default: return state;
     }
 }
@@ -39,14 +45,12 @@ const reducer = (state = INIT_STATE, action) => {
 const ProductsContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-    //Забираем данные с инпутов и помещаем в базу
     const setProductData = async (newProduct) => {
         console.log(newProduct)
         await axios.post(API_PRODUCTS, newProduct)
         getProductData();
     }
 
-    // Получаем актуальные данные из базы, для отображения
     const getProductData = async () => {
         const { data }  = await axios(API_PRODUCTS);
         dispatch({
@@ -55,29 +59,25 @@ const ProductsContextProvider = ({ children }) => {
         })
     }    
 
-    // Удаляем данные из базы
     const deleteProduct = async (productId) => {
         await axios.delete(`${API_PRODUCTS}/${productId}`);
         getProductData();
     }
 
-    //Получаем id по клику на ссылку Learn more
-    // const getDetails = async (productId) => {
-    //     const { data } = await axios(`${API_PRODUCTS}/${productId}`);
-    //     dispatch({
-    //         type: "GET_PRODUCT_DETAILS",
-    //         payload: data
-    //     })
-    // }
+    const getDetails = async (productId) => {
+        const { data } = await axios(`${API_PRODUCTS}/${productId}`);
+        dispatch({
+            type: "GET_PRODUCT_DETAILS",
+            payload: data
+        })
+    }
 
-    // Открываем модальное окно для редактирования
     const openEditFormModal = () =>{
         dispatch({
             type: "OPEN_EDIT_FORM_MODAL",
         })
     }
 
-    // Получаем id по клику на кнопку редактирования и вытаскиваем нужный объект
     const getEditId = async (productId) => {
         const { data } = await axios(`${API_PRODUCTS}/${productId}`);
         dispatch({
@@ -86,7 +86,6 @@ const ProductsContextProvider = ({ children }) => {
         })
     }
 
-    // Получаем отредактированный объект и помещаем в базу данных
     const editedProductData = async (editedItem) => {
         await axios.patch(`${API_PRODUCTS}/${editedItem.id}`, editedItem)
         getProductData();
@@ -96,31 +95,30 @@ const ProductsContextProvider = ({ children }) => {
         })
     }
 
-     //Получаем товар для отображения в новинках
-    // const getLatestData = async () => {
-    //     const { data } = await axios(API_PRODUCTS);
-    //     const newItem = data.filter(item => {
-    //         if(item?.latest) {
-    //             return item;
-    //         }
-    //     })
-    //     dispatch ({
-    //         type: "GET_LATEST",
-    //         payload: newItem
-    //     })
-    // }    
+    const getProductForCart = async (productId) => {
+        const { data } = await axios(`${API_PRODUCTS}/${productId}`);
+        console.log(data)
+        dispatch({
+            type: "GET_PRODUCT__FOR__CART",
+            payload: data
+        })
+    }
 
     return (
         <productsContext.Provider value={{
             products: state.products,
             editModalFormStatus: state.editModalFormStatus,
             editProduct: state. editProduct,
+            productDetails: state.productDetails,
+            cartProducts: state.cartProducts,
             setProductData,
             getProductData,
             deleteProduct,
             openEditFormModal,
             getEditId,
-            editedProductData
+            editedProductData,
+            getDetails,
+            getProductForCart
         }}>
             {children}
         </productsContext.Provider>
