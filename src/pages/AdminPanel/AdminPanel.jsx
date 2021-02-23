@@ -23,7 +23,8 @@ const AdminPanel = () => {
         imageDetail: '',
         imageDetailExtra: '',
         detailLength: '',
-        detailGuest: ''
+        detailGuest: '',
+        category: ''
     });
 
     useEffect(() => {
@@ -49,7 +50,8 @@ const AdminPanel = () => {
             imageDetail: '',
             imageDetailExtra: '',
             detailLength: '',
-            detailGuest: ''
+            detailGuest: '',
+            category: ''
         });
     }
 
@@ -119,6 +121,16 @@ const AdminPanel = () => {
                                     name="detailGuest"
                                     onChange={getInpValue}
                                 />
+                                <select className="item-category"
+                                    name="category"
+                                    value={item.category}
+                                    onChange={getInpValue}
+                                >
+                                    <option>---</option>
+                                    <option value="Sport Yacht">Sport Yacht</option>
+                                    <option value="Premium Class">Premium Class</option>
+                                    <option value="Econom Class">Econom Class</option>
+                                </select>
                             </div>
                             <div className="add-product__btn"
                                 onClick={addProduct}

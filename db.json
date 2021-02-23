@@ -10,6 +10,7 @@
       "imageDetailExtra": "https://www.superyachtsmonaco.com/app/uploads/2020/09/JCB13923-24-2000x1334.jpg",
       "detailLength": "48.50",
       "detailGuest": "5",
+      "category": "Sport Yacht",
       "id": 1
     },
     {
@@ -35,6 +36,19 @@
       "detailLength": "1111",
       "detailGuest": "11111",
       "id": 3
+    },
+    {
+      "title": "werewer",
+      "year": "",
+      "price": "",
+      "image": "",
+      "speed": "",
+      "imageDetail": "",
+      "imageDetailExtra": "",
+      "detailLength": "",
+      "detailGuest": "",
+      "category": "Sport Yacht",
+      "id": 4
     }
   ]
 }
